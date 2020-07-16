@@ -36,7 +36,8 @@ def generateTiles(xSize, ySize):
             #Renders the tile to screen
             pygame.draw.rect(screen, Map[x][y].color, Map[x][y].rectangle, 1)
             
-generateTiles(40,40)
+a=10
+generateTiles(a,a)
 
 while 1:
     for event in pygame.event.get():
