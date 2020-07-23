@@ -36,15 +36,7 @@ def generateTiles(xSize, ySize):
 
             Map[x][y] = pygame.Rect(c2,y1,n,m)
             pygame.draw.rect(screen, (0,0,0), pygame.Rect(c2,y1,n,m), 1)
-        
-        
-        #     #Generates a single tile
-        #     TileWidth = int(width/xSize)
-        #     TileHeight = int(height/ySize)
-        #     Map[x][y] = Tile(pygame.Rect(TileWidth*x+TileWidth, TileHeight*y+TileHeight, TileWidth, TileHeight), (0,0,0))
-        #     #Renders the tile to screen
-        #     pygame.draw.rect(screen, Map[x][y].color, Map[x][y].rectangle, 1)
-            
+               
 a=10
 generateTiles(a,a)
 
