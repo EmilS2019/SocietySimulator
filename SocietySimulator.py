@@ -17,15 +17,15 @@ def f(x, y):
     return x*255/y
 
 def generateBackground():
-    for w in range(width):
-        for h in range(height):
+    for x in range(width):
+        for y in range(height):
             #Math behind this:
             #https://www.desmos.com/calculator/vioyppqpcf
-            pixelarray[w][h] = (30, min(f(h+w/10, width)+50, 255), 50)
+            pixelarray[x][y] = (30, min(f(y+x/10, width)+50, 255), 50)
         #(j*i)**3*255/(width*height)**3
 
 
-Tile = namedtuple("Tile", ("rectangle", "x", "y", "width", "height", "highlighted"))
+Tile = namedtuple("Tile", ("rectangle", "x", "y", "width", "height", "highlighted", "food"))
 
 def generateTiles(xSize, ySize):
     Map = [[None for i in range(xSize+1)] for j in range(ySize+1)]
@@ -40,8 +40,8 @@ def generateTiles(xSize, ySize):
             c2 = n*(x+1)-n-1+offset
             y1 = m*(y+1)-m-1+offset
 
-            Map[x][y] = Tile(pygame.Rect(c2,y1,n,m), c2, y1, n, m, False)
-
+            Map[x][y] = Tile(pygame.Rect(c2,y1,n,m), c2, y1, n, m, False, x)
+            #Map[x][y].food = x
             pygame.gfxdraw.rectangle(screen, pygame.Rect(c2,y1,n,m), (0,0,0,30))
     return Map
 
@@ -67,5 +67,6 @@ while 1:
             
             if  mousePos[0] > tile.x and mousePos[0] < tile.x + tile.width and mousePos[1] > tile.y and mousePos[1] < tile.y + tile.height:
                 pygame.gfxdraw.box(screen, tile.rectangle, (0,0,0,100))
+                print(tile.food)
         
 
