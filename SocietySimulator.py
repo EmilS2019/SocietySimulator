@@ -4,7 +4,7 @@ from collections import namedtuple
 import pygame.gfxdraw
 from math import ceil #, log, sin
 
-size = width, height = 500, 500
+size = width, height = 700, 700
 #black = 0, 0, 0
 
 screen = pygame.display.set_mode(size, pygame.DOUBLEBUF)
@@ -46,8 +46,8 @@ def generateTiles(xSize, ySize):
     return Map
 
 generateBackground()
-xTiles= 10
-yTiles = 10
+xTiles= 50
+yTiles = 50
 Map = generateTiles(xTiles,yTiles)
 
 while 1:
