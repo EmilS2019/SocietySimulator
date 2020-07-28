@@ -5,13 +5,8 @@ import pygame.gfxdraw
 from math import ceil #, log, sin
 
 size = width, height = 700, 700
-#black = 0, 0, 0
-
 screen = pygame.display.set_mode(size, pygame.DOUBLEBUF)
-#screen.fill(0, 0, 0)
-
 pixelarray = pygame.PixelArray(screen)
-
 
 def f(x, y):
     return x*255/y
@@ -23,7 +18,6 @@ def generateBackground():
             #https://www.desmos.com/calculator/vioyppqpcf
             pixelarray[x][y] = (30, min(f(y+x/10, width)+50, 255), 50)
         #(j*i)**3*255/(width*height)**3
-
 
 Tile = namedtuple("Tile", ("rectangle", "x", "y", "width", "height", "highlighted", "food"))
 
@@ -68,5 +62,3 @@ while 1:
             if  mousePos[0] > tile.x and mousePos[0] < tile.x + tile.width and mousePos[1] > tile.y and mousePos[1] < tile.y + tile.height:
                 pygame.gfxdraw.box(screen, tile.rectangle, (0,0,0,100))
                 print(tile.food)
-        
-
