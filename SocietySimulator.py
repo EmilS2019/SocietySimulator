@@ -40,10 +40,10 @@ while 1:
     mousePos = pygame.mouse.get_pos()
     #generateBackground()
     
-    # for x in range(xTiles):
-    #     for y in range(yTiles):
-    #         tile = Map[x][y]
-    #         pygame.gfxdraw.rectangle(screen, tile.rectangle, (0,0,0,30))
+    for x in range(xTiles):
+        for y in range(yTiles):
+            tile = Map[x][y]
+            pygame.gfxdraw.rectangle(screen, tile.rectangle, (0,0,0,30))
             
-    #         if  mousePos[0] > tile.x and mousePos[0] < tile.x + tile.width and mousePos[1] > tile.y and mousePos[1] < tile.y + tile.height:
-    #             pygame.gfxdraw.box(screen, tile.rectangle, (0,0,0,100))
+            if  mousePos[0] > tile.x and mousePos[0] < tile.x + tile.width and mousePos[1] > tile.y and mousePos[1] < tile.y + tile.height:
+                pygame.gfxdraw.box(screen, tile.rectangle, (0,0,0,100))
