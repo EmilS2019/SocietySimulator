@@ -3,4 +3,5 @@ class Map:
         self.x = x
         self.y = y
         
-
+from collections import namedtuple
+Tile = namedtuple("Tile", ("rectangle", "x", "y", "width", "height", "highlighted", "food"))
