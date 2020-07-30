@@ -5,7 +5,7 @@ import sys, pygame
 def f(x, y):
     return x*255/y
 
-def generateBackground(width, height):
+def generateBackground(width, height, x=0, y=0):
     outputPixelarray = [[None for i in range(width)] for j in range(height)]
     for x in range(width):
         for y in range(height):

@@ -2,7 +2,7 @@ import pygame
 import pygame.gfxdraw
 
 #My own
-from TheSystem import screen
+from TheSystem import screen, pixelarray
 
 class Tile:
     def __init__(self,x,y,width,height,food):
@@ -19,9 +19,9 @@ class Tile:
             #Draw
             pygame.gfxdraw.box(screen, self.rectangle, (0,0,0,100))
         else:
+            from mapGeneration import generateBackground
             #Undraw
-            #for x in range(self.x, self.width):
-            #    for y in range(self.y, self.height):
-            #        pixelarray[x][y]=
-            pass
-    
+            generateBackground(self.width, self.height, self.x, self.y)
+            # for x in range(self.x, self.width):
+            #     for y in range(self.y, self.height):
+            #         pixelarray[x][y] = background[x][y]

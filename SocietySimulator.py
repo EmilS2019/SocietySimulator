@@ -16,7 +16,7 @@ def drawBackground():
     for x in range(len(background)):
         for y in range(len(background[x])):
             pixelarray[x][y] = background[x][y]
-
+            
 def drawMap():
     for x in range(len(Map)):
         for y in range(len(Map)):
