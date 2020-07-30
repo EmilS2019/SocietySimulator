@@ -1,0 +1,22 @@
+I realized that all the imports must come from a certain direction.
+
+Example:
+
+fileA.py
+
+def something():
+   blah blah blah
+
+
+fileB.py
+
+from fileA import something
+def somethingElse():
+    blah blah = something()
+
+
+But you cannot import file B from file A.
+If you imagine the entire project as a graph, this means that
+the graph will be a directed tree graph. We must avoid
+cycles at all costs. 
+

@@ -1,24 +1,21 @@
-import sys, pygame
-pygame.init()
+import pygame
 import pygame.gfxdraw
 
 #My own
 from mapGeneration import *
 from Tile import Tile
+from TheSystem import *
 
-size = width, height = 700, 700
-screen = pygame.display.set_mode(size, pygame.DOUBLEBUF)
-outPixelarray = generateBackground(width, height)
-pixelarray = pygame.PixelArray(screen)
+background = generateBackground(width, height)
 
 xTiles= 50
 yTiles = 50
 Map = generateTiles(xTiles,yTiles, width, height)
 
 def drawBackground():
-    for x in range(len(outPixelarray)):
-        for y in range(len(outPixelarray[x])):
-            pixelarray[x][y] = outPixelarray[x][y]
+    for x in range(len(background)):
+        for y in range(len(background[x])):
+            pixelarray[x][y] = background[x][y]
 
 def drawMap():
     for x in range(len(Map)):
@@ -28,7 +25,7 @@ def drawMap():
 
 drawBackground()
 drawMap()
-
+selectedTile = Tile(0,0,0,0,0)
 
 while 1:
     for event in pygame.event.get():
@@ -46,4 +43,9 @@ while 1:
             pygame.gfxdraw.rectangle(screen, tile.rectangle, (0,0,0,30))
             
             if  mousePos[0] > tile.x and mousePos[0] < tile.x + tile.width and mousePos[1] > tile.y and mousePos[1] < tile.y + tile.height:
-                pygame.gfxdraw.box(screen, tile.rectangle, (0,0,0,100))
+                if (selectedTile != tile):
+                    tile.highlightToggle(True)
+                    selectedTile.highlightToggle(False)
+                    selectedTile = tile
+                    #generateBackground(width, height)
+                    #pygame.gfxdraw.box(screen, tile.rectangle, (0,0,0,100))
