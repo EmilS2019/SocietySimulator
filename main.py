@@ -16,11 +16,16 @@ while 1:
         if event.type == pygame.QUIT: sys.exit()
     pygame.display.update()
     pygame.display.flip()
+    
     n+=1
-
-    if n%100==0:
-        b = generateBackground(width,height, red=10*(n/100))
-        for x in range(width):
-            for y in range(height):
-                pixelarray[x][y]=b[x][y]
+    mousePos = pygame.mouse.get_pos()
+    
+    
+    
+    
+    #if n%50==0:
+    b = generateBackground(width,height, red=mousePos[0]/2 + mousePos[1]/2)
+    for x in range(50, 60):
+        for y in range(50,60):
+            pixelarray[x][y]=b[x][y]
     
