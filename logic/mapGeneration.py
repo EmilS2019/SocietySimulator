@@ -1,19 +1,3 @@
-from Tile import Tile
-from math import ceil #, log, sin
-import sys, pygame
-
-def f(x, y):
-    return x*255/y
-
-def generateBackground(width, height, x=0, y=0):
-    outputPixelarray = [[None for i in range(width)] for j in range(height)]
-    for x in range(width):
-        for y in range(height):
-            #Math behind this:
-            #https://www.desmos.com/calculator/vioyppqpcf
-            outputPixelarray[x][y] = (30, min(f(y+x/10, width)+50, 255), 50)
-    return outputPixelarray
-
 def generateTiles(xSize, ySize, width, height):
     Map = [[None for i in range(xSize)] for j in range(ySize)]
     for x in range(xSize):

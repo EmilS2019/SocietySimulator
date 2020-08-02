@@ -31,8 +31,7 @@ while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
 
-    pygame.display.update()
-    pygame.display.flip()
+
     
     mousePos = pygame.mouse.get_pos()
     #generateBackground()
@@ -49,3 +48,6 @@ while 1:
                     selectedTile = tile
                     #generateBackground(width, height)
                     #pygame.gfxdraw.box(screen, tile.rectangle, (0,0,0,100))
+
+    pygame.display.update()
+    pygame.display.flip()
