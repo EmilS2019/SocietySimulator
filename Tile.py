@@ -19,10 +19,13 @@ class Tile:
             #Draw
             pygame.gfxdraw.box(screen, self.rectangle, (0,0,0,100))
         else:
-            #Wow great fucking code mate
-            from SocietySimulator import drawBackground
+            from mapGeneration import generateBackground
+            from SocietySimulator import background
             #Undraw
-            drawBackground()
+            for x in range(self.x, self.width):
+                for y in range(self.y, self.height):
+                    pixelarray[x][y] = background[x][y]
+            #generateBackground(self.width, self.height, self.x, self.y)
             # for x in range(self.x, self.width):
             #     for y in range(self.y, self.height):
             #         pixelarray[x][y] = background[x][y]
