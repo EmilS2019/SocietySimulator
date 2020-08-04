@@ -20,12 +20,12 @@ while 1:
     n+=1
     mousePos = pygame.mouse.get_pos()
     
-    
+    #this doesn't work
     
     
     #if n%50==0:
-    b = generateBackground(width,height, red=mousePos[0]/2 + mousePos[1]/2)
-    for x in range(50, 60):
-        for y in range(50,60):
-            pixelarray[x][y]=b[x][y]
+    #b = generateBackground(width,height, red=mousePos[0]/2 + mousePos[1]/2)
+    #for x in range(50, 60):
+    #    for y in range(50,60):
+    #        pixelarray[x][y]=b[x][y]
     
